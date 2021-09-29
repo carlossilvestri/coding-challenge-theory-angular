@@ -1,0 +1,29 @@
+<div>
+  <div class="label-cont" (click)="toggleIsShown()">
+    <div
+      class="btn-collapse"
+    >
+      <p class="m-0">{{ text.titulo }}</p>
+      <img class="flecha" [ngClass]="{'rotate': active }" src="assets/img/arrow-icon.svg" alt="Flecha" />
+    </div>
+  </div>
+  <div
+    class="collapse"
+    [ngClass]="{'show animate__animated animate__fadeIn': active }"
+    [id]="getCollapseContainerId(index)"
+  >
+    <div class="card card-body">
+      <div *ngFor="let item of text.complemento">
+        <div class="my-2" *ngIf="item.element == 'div'">
+          {{ item.texto }}
+        </div>
+        <ul class="mx-2 " *ngIf="item.listaUl?.length > 0">
+          <li *ngFor="let element of item.listaUl" class="mx-2">{{ element.texto }}</li>
+        </ul>
+        <ol class="mx-2 " *ngIf="item.listaOl?.length > 0">
+          <li *ngFor="let element of item.listaOl" class="mx-2">{{ element.texto }}</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>

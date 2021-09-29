@@ -1,1 +1,9 @@
-<p>home works!</p>
+<div class="container animate__animated animate__fadeInLeft">
+  <div class="cont-image">
+    <img src="assets/img/arkusnexus-logo.jpg" alt="ArkusNexus Logo">
+    <h3>Code Challenge</h3>
+  </div>
+  <app-collapse-text
+  [text]="objTexto" [index]="i" *ngFor="let objTexto of arrayOfText; let i = index;"
+  ></app-collapse-text>
+</div>
